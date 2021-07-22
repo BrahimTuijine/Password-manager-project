@@ -14,7 +14,7 @@ class _SigninState extends State<Signin> {
           "Sing In",
           style: TextStyle(color: Theme.of(context).primaryColor, fontSize: 23),
         ),
-        iconTheme: IconThemeData(color: Colors.white),
+        
         centerTitle: true,
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       ),
