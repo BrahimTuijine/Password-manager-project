@@ -162,7 +162,9 @@ class _SigninState extends State<Signin> {
                   width: 170,
                   height: 40,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pushReplacementNamed("homescreen");
+                    },
                     child: Text("Sign In"),
                   ),
                 ),

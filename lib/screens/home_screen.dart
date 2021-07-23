@@ -33,7 +33,9 @@ class _HomeScreenState extends State<HomeScreen> {
           Padding(
             padding: const EdgeInsets.only(right: 10.0),
             child: IconButton(
-              onPressed: () => print('add button pressed'),
+              onPressed: () {
+                Navigator.of(context).pushNamed("addaccount");
+              },
               icon: Icon(
                 Icons.add_circle_outline,
                 color: Colors.white,

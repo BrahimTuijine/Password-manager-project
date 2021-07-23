@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       debugShowCheckedModeBanner: false,
-      home: Addaccount(),
+      home: Signin(),
       routes: {
         "login": (context) => Signin(),
         "signup": (context) => Signup(),

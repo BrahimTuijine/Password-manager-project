@@ -22,7 +22,9 @@ class _AddaccountState extends State<Addaccount> {
     return Scaffold(
         appBar: AppBar(
           leading: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
             icon: Icon(
               Icons.highlight_off,
               size: 30,
