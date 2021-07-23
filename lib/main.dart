@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:password_manager_project/account/add_account.dart';
 import 'package:password_manager_project/auth/login.dart';
 import 'package:password_manager_project/auth/signup.dart';
+import 'package:password_manager_project/screens/home_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -40,6 +41,7 @@ class MyApp extends StatelessWidget {
         "login": (context) => Signin(),
         "signup": (context) => Signup(),
         "addaccount": (context) => Addaccount(),
+        "homescreen": (context) => HomeScreen(),
       },
     );
   }
