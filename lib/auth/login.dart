@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:password_manager_project/auth/signup.dart';
 
 class Signin extends StatefulWidget {
   @override
@@ -14,7 +15,7 @@ class _SigninState extends State<Signin> {
           "Sing In",
           style: TextStyle(color: Theme.of(context).primaryColor, fontSize: 23),
         ),
-        
+        iconTheme: IconThemeData(color: Colors.white),
         centerTitle: true,
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       ),
@@ -27,7 +28,6 @@ class _SigninState extends State<Signin> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                
                 ElevatedButton(
                     onPressed: () {},
                     child: Container(
@@ -79,7 +79,7 @@ class _SigninState extends State<Signin> {
                 ),
                 Text(
                   "or",
-                  style: TextStyle(color: Color(0xffF8F8F8)),
+                  style: TextStyle(color: Color(0xffF8F8F8), fontSize: 17),
                 ),
                 SizedBox(
                   height: 20,
@@ -89,26 +89,34 @@ class _SigninState extends State<Signin> {
                     child: Column(
                       children: [
                         TextFormField(
+                          style: TextStyle(color: Colors.white),
                           decoration: InputDecoration(
                             prefixIcon: Icon(
                               Icons.mail,
                               color: Color(0xff505458),
                             ),
-                            hintText: "E-mail",
-                            hintStyle: TextStyle(color: Color(0xff505458)),
+                            hintText: "Enter your e-mail",
+                            hintStyle: TextStyle(
+                              color: Color(0xff505458),
+                            ),
                             enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(23),
-                                borderSide:
-                                    BorderSide(color: Color(0xff00F7DA))),
+                              borderRadius: BorderRadius.circular(23),
+                              borderSide: BorderSide(
+                                color: Color(0xff00F7DA),
+                              ),
+                            ),
                             focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(23),
-                                borderSide: BorderSide(color: Colors.cyan)),
+                              borderRadius: BorderRadius.circular(23),
+                              borderSide: BorderSide(color: Colors.cyan),
+                            ),
                           ),
                         ),
                         SizedBox(
                           height: 17,
                         ),
                         TextFormField(
+                          obscureText: true,
+                          style: TextStyle(color: Colors.white),
                           decoration: InputDecoration(
                             prefixIcon: Icon(
                               Icons.lock,
@@ -118,7 +126,7 @@ class _SigninState extends State<Signin> {
                                 borderRadius: BorderRadius.circular(23),
                                 borderSide:
                                     BorderSide(color: Color(0xff00F7DA))),
-                            hintText: "Password",
+                            hintText: "Enter your password",
                             hintStyle: TextStyle(color: Color(0xff505458)),
                             focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(23),
@@ -136,7 +144,11 @@ class _SigninState extends State<Signin> {
                               ),
                               TextButton(
                                   onPressed: () {
-                                    Navigator.of(context).pushNamed("signup");
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => Signup()),
+                                    );
                                   },
                                   child: Text("Click Here"))
                             ],

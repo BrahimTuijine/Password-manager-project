@@ -10,6 +10,7 @@ class _SignupState extends State<Signup> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.white),
         title: Text(
           "Sing Up",
           style: TextStyle(color: Theme.of(context).primaryColor, fontSize: 23),
@@ -83,10 +84,17 @@ class _SignupState extends State<Signup> {
                   height: 20,
                 ),
                 Form(
+                  
                   child: Container(
                     child: Column(
                       children: [
                         TextFormField(
+                          validator: (val){
+                            if (val!.isEmpty) {
+                              return "username can not be empty";
+                            }
+                          },
+                          style: TextStyle(color: Colors.white),
                           decoration: InputDecoration(
                             prefixIcon: Icon(
                               Icons.verified_user_sharp,
@@ -108,12 +116,13 @@ class _SignupState extends State<Signup> {
                           height: 17,
                         ),
                         TextFormField(
+                          style: TextStyle(color: Colors.white),
                           decoration: InputDecoration(
                             prefixIcon: Icon(
                               Icons.mail,
                               color: Color(0xff505458),
                             ),
-                            hintText: "E-mail",
+                            hintText: "sanfour@gmail.com",
                             hintStyle: TextStyle(color: Color(0xff505458)),
                             enabledBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(23),
@@ -128,6 +137,8 @@ class _SignupState extends State<Signup> {
                           height: 17,
                         ),
                         TextFormField(
+                          obscureText: true,
+                          style: TextStyle(color: Colors.white),
                           decoration: InputDecoration(
                             prefixIcon: Icon(
                               Icons.lock,
@@ -137,7 +148,7 @@ class _SignupState extends State<Signup> {
                                 borderRadius: BorderRadius.circular(23),
                                 borderSide:
                                     BorderSide(color: Color(0xff00F7DA))),
-                            hintText: "Password",
+                            hintText: "Pick a strong Password",
                             hintStyle: TextStyle(color: Color(0xff505458)),
                             focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(23),
@@ -155,7 +166,7 @@ class _SignupState extends State<Signup> {
                               ),
                               TextButton(
                                   onPressed: () {
-                                    Navigator.of(context).pushNamed("login");
+                                    Navigator.of(context).pop();
                                   },
                                   child: Text("Click Here"))
                             ],
