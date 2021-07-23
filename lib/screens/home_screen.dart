@@ -94,7 +94,6 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               Expanded(
                 child: Container(
-                  height: MediaQuery.of(context).size.height * 0.1,
                   padding: EdgeInsets.symmetric(horizontal: 30, vertical: 30),
                   // TODO : create a json file and create a list view builder
                 ),
