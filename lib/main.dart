@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:password_manager_project/account/add_account.dart';
 import 'package:password_manager_project/auth/login.dart';
 import 'package:password_manager_project/auth/signup.dart';
+import 'package:password_manager_project/pro_version/Generate_password.dart';
 import 'package:password_manager_project/screens/home_screen.dart';
 
 void main() {
@@ -20,9 +21,9 @@ class MyApp extends StatelessWidget {
         )),
         textTheme: TextTheme(
           headline1: GoogleFonts.montserrat(
-              fontSize: 24.0,
-              color: Color(0xFFF8F8F8),
-              fontWeight: FontWeight.w500),
+            color: Color(0xFFF8F8F8),
+            fontSize: 20
+          ),
         ),
         scaffoldBackgroundColor: Color(0xFF191919),
         primaryColor: Color(0xFFF8F8F8),
@@ -36,12 +37,13 @@ class MyApp extends StatelessWidget {
         ),
       ),
       debugShowCheckedModeBanner: false,
-      home: Signin(),
+      home: GeneratePass(),
       routes: {
         "login": (context) => Signin(),
         "signup": (context) => Signup(),
         "addaccount": (context) => Addaccount(),
         "homescreen": (context) => HomeScreen(),
+        "generatepss": (context) => GeneratePass(),
       },
     );
   }

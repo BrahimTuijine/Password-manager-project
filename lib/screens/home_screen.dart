@@ -18,17 +18,22 @@ class _HomeScreenState extends State<HomeScreen> {
     'Personal',
     'Shopping',
   ];
+  var scaffoldkey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: scaffoldkey,
+      drawer: Drawer(),
       appBar: AppBar(
         leading: IconButton(
-          onPressed: () => print('settings pressed'),
-          icon: Icon(
-            Icons.settings_outlined,
-            color: Colors.white,
-          ),
+        onPressed: () {
+          scaffoldkey.currentState!.openDrawer();
+        },
+        icon: Icon(
+          Icons.settings_outlined,
+          color: Colors.white,
         ),
+      ),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 10.0),
