@@ -61,15 +61,13 @@ class _GeneratePassState extends State<GeneratePass> {
                       style: TextStyle(color: Theme.of(context).primaryColor),
                     ),
                     Slider(
-                      inactiveColor: Colors.white,
-                      
+                        inactiveColor: Colors.white,
                         max: 32,
                         value: currentslidervalue,
                         onChanged: (val) {
                           setState(() {
                             currentslidervalue = val;
                           });
-                           
                         }),
                     Text(
                       "32",
