@@ -130,7 +130,9 @@ class _AddaccountState extends State<Addaccount> {
                           height: 50,
                           width: MediaQuery.of(context).size.width,
                           child: ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.of(context).pushNamed("generatepss");
+                            },
                             child: Text("Generate a Password"),
                           ),
                         ),
