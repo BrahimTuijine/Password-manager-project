@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:password_manager_project/models/tag_model.dart';
 
 class Addaccount extends StatefulWidget {
   @override
@@ -6,13 +7,9 @@ class Addaccount extends StatefulWidget {
 }
 
 class _AddaccountState extends State<Addaccount> {
-  List _taglist = [
-    {'tagname': 'Social', 'selected': false},
-    {'tagname': 'Master Password', 'selected': false},
-    {'tagname': 'Bank', 'selected': false},
-    {'tagname': 'Bills', 'selected': false},
-    {'tagname': 'Personal', 'selected': false},
-    {'tagname': 'Shopping', 'selected': false},
+  List<Tags> _taglist = [
+    Tags(1, 'Social'),
+    Tags(5, 'Personal'),
   ];
 
   // { tagname : 'Scical', selected : true }
@@ -133,7 +130,6 @@ class _AddaccountState extends State<Addaccount> {
                           ),
                         ),
                         TextFormField(
-                          obscureText: true,
                           style: TextStyle(
                             color: Colors.white,
                           ),
@@ -167,22 +163,45 @@ class _AddaccountState extends State<Addaccount> {
                     children: [
                       for (var i = 0; i < _taglist.length; i++)
                         Container(
-                          padding: EdgeInsets.only(left: 10, right: 10),
+                          padding: EdgeInsets.only(left: 5, right: 5),
                           decoration: BoxDecoration(
                             color: Color(0xFF242627),
                             borderRadius: BorderRadius.circular(30.0),
                           ),
-                          margin: EdgeInsets.all(5),
+                          margin: EdgeInsets.all(4),
                           child: Padding(
-                            padding: const EdgeInsets.all(17),
+                            padding: const EdgeInsets.all(12),
                             child: Text(
-                              _taglist[i].toString(),
+                              _taglist[i].tagName,
                               style: TextStyle(
                                 color: Colors.white,
                               ),
                             ),
                           ),
                         ),
+                      GestureDetector(
+                        onTap: () {
+                          print('pressed');
+                        },
+                        child: Container(
+                          padding: EdgeInsets.only(left: 5, right: 5),
+                          decoration: BoxDecoration(
+                            color: Color(0xFF242627),
+                            borderRadius: BorderRadius.circular(30.0),
+                          ),
+                          margin: EdgeInsets.all(4),
+                          child: Padding(
+                            padding: const EdgeInsets.all(12),
+                            child: Text(
+                              '+',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                 ],
@@ -192,28 +211,3 @@ class _AddaccountState extends State<Addaccount> {
         ));
   }
 }
-
-
-
-class Tags{
-
-}
-
-
-/**
- *  table accounts : 
- * 
- *   website:facebook,
- *   email:bilelmerseni7016@gmail.com,
- *   password:bilel001,
- *   note:bla bla bla bla
- * 
- * 
- * 
- * table tags
- *  tagid : 1
- *  tagname : social
- * 
- * 
- * 
- */

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:password_manager_project/models/accounts_model.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -94,8 +95,41 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               Expanded(
                 child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 30, vertical: 30),
-                  // TODO : create a json file and create a list view builder
+                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+                  child: ListView.builder(
+                    itemCount: accountList.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      var item = accountList[index];
+                      return Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15.0),
+                        ),
+                        color: Color(0xFF242627),
+                        child: ListTile(
+                            onTap: () => print('move niggaaaa'),
+                            title: Text(
+                              item.accountWebsite,
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            leading: Container(
+                                height: 40,
+                                width: 40,
+                                child: Image.asset(
+                                  item.brandImage,
+                                  fit: BoxFit.cover,
+                                )),
+                            subtitle: Text(
+                              item.accountEmail,
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            trailing: IconButton(
+                              onPressed: () => print('pressed'),
+                              icon: Icon(Icons.content_copy_outlined,
+                                  color: Colors.white),
+                            )),
+                      );
+                    },
+                  ),
                 ),
               )
             ],
