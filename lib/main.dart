@@ -20,10 +20,8 @@ class MyApp extends StatelessWidget {
           color: Color(0xFFF8F8F8),
         )),
         textTheme: TextTheme(
-          headline1: GoogleFonts.montserrat(
-            color: Color(0xFFF8F8F8),
-            fontSize: 20
-          ),
+          headline1:
+              GoogleFonts.montserrat(color: Color(0xFFF8F8F8), fontSize: 20),
         ),
         scaffoldBackgroundColor: Color(0xFF191919),
         primaryColor: Color(0xFFF8F8F8),
@@ -37,7 +35,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       debugShowCheckedModeBanner: false,
-      home: GeneratePass(),
+      home: HomeScreen(),
       routes: {
         "login": (context) => Signin(),
         "signup": (context) => Signup(),
