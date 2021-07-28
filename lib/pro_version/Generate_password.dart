@@ -8,7 +8,7 @@ class GeneratePass extends StatefulWidget {
 }
 
 class _GeneratePassState extends State<GeneratePass> {
-  double currentslidervalue = 0.0;
+  double currentslidervalue = 8.0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -63,6 +63,7 @@ class _GeneratePassState extends State<GeneratePass> {
                     Slider(
                         inactiveColor: Colors.white,
                         max: 32,
+                        min: 8.0,
                         value: currentslidervalue,
                         onChanged: (val) {
                           setState(() {

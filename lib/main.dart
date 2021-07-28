@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      home: GeneratePass(),
       routes: {
         "login": (context) => Signin(),
         "signup": (context) => Signup(),
